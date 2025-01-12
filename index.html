@@ -139,11 +139,14 @@
         function handleSubmit(event) {
             event.preventDefault();
             const name = document.getElementById('nameInput').value.toLowerCase();
-            
+            const students = ["sameer", "gursimran","jashan", "hazel","smiksha","shiven","daivik","ramit","chris","heena","manpreet","gurleen","tarandeep"];
             if (name === 'guri') {
                 window.location.href = 'https://boggy-pyramid-93c.notion.site/Renze-Shino-17752b0e882680fda3b0def50d49e87c?pvs=4';
-            } else {
+            } else if (students.includes(name)){
                 window.location.href = 'https://boggy-pyramid-93c.notion.site/DASHBOARD-16c52b0e8826805282e6dbb256c2e741?pvs=4';
+            }
+            else{
+                window.location.href = 'https://boggy-pyramid-93c.notion.site/Stranger-name-detected-17952b0e882680fc8749cc0b48fb75f8?pvs=4';
             }
         }
     </script>

@@ -11,6 +11,9 @@ function moveButton() {
     var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight);
     document.getElementById('noButton').style.left = `${x}px`;
     document.getElementById('noButton').style.top = `${y}px`;
+    
 }
 document.getElementById('noButton').addEventListener('mouseover', moveButton);
-document.getElementById('noButton').addEventListener('touchstart', moveButton);
+document.getElementById('noButton').addEventListener('touchstart', (event) => {
+    event.preventDefault();
+    moveButton();                                                                          });

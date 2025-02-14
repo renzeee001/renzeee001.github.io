@@ -1,45 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="./Styles/styles.css">
-    <script src="./script.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renze Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Add your existing styles here */
-
-        /* Additional style for the note */
-        .made-with-love {
-            position: fixed;
-            bottom: 10px; /* Adjust this value to move it closer to the bottom */
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            color: #777;
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://i.pinimg.com/originals/b1/d5/44/b1d544809805dd882c152d503fada7b3.jpg');
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
         }
 
-        .github-link {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: bold;
+        /* Mobile background image */
+        @media (max-width: 768px) {
+            body {
+                background-image: url('https://i.pinimg.com/736x/05/12/3f/05123f46c664d4015ee30bb41bf71183.jpg');
+            }
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 190, 152, 0.3), rgba(255, 87, 51, 0.3));
+            z-index: 1;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(255, 87, 51, 0.25);
+            backdrop-filter: blur(4px);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            z-index: 2;
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .login-container:hover {
+            transform: translateY(-5px);
+        }
+
+        .login-container h2 {
+            margin-bottom: 25px;
+            color: #ff5733;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            font-weight: 600;
+        }
+
+        .login-form input[type="text"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 25px;
+            border: 2px solid #ffbe98;
+            border-radius: 10px;
+            box-sizing: border-box;
+            font-size: 16px;
+            background: rgba(255, 255, 255, 0.9);
+            transition: all 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-form input[type="text"]:focus {
+            border-color: #ff5733;
+            outline: none;
+            box-shadow: 0 0 10px rgba(255, 87, 51, 0.2);
+        }
+
+        .login-form button {
+            background: linear-gradient(45deg, #ff5733, #ffa41b);
+            color: white;
+            padding: 14px 28px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 87, 51, 0.4);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .login-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 87, 51, 0.6);
+            background: linear-gradient(45deg, #ff6b4a, #ffb342);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 0.8;
+                transform: translateY(0);
+            }
+        }
+
+        .login-container {
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        ::placeholder {
+            color: #ff8c69;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div>
-            <h1 class="header_text">Will you be my valentine? hehe</h1>
-        </div>
-        <div class="gif_container">
-            <img src="https://64.media.tumblr.com/44437aaa3af65ef5b5dc25b2cf1e81d1/6acc7d78ea83e207-45/s400x600/5b30035952803850ed3136fbe760ceff97ee8d19.gif" alt="Cute animated illustration">
-        </div>
-        <div class="buttons">
-            <button class="btn" id="yesButton" onclick="nextPage()">Yes</button>
-            <button class="btn" id="noButton" onmouseover="moveButton()">No</button>
-        </div>
-
-        <!-- Positioned closer to the bottom with GitHub link -->
-        <p class="made-with-love">
-            Made with love and a sprinkle of creativity by Renze 💖✨. 
-        </p>
+    <div class="login-container">
+        <h2>Enter Your Name</h2>
+        <form class="login-form" onsubmit="handleSubmit(event)">
+            <input type="text" id="nameInput" placeholder="Please enter your name" required>
+            <button type="submit">Enter →</button>
+        </form>
     </div>
+
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('nameInput').value.toLowerCase();
+            const students = ["sameer", "gursimran","jashan", "hazel","smiksha","shiven","daivik","ramit","chris","heena","manpreet","gurleen","tarandeep"];
+            if (name === 'shino') {
+                window.location.href = 'https://boggy-pyramid-93c.notion.site/Renze-Shino-17752b0e882680fda3b0def50d49e87c?pvs=4';
+            } else if (students.includes(name)){
+                window.location.href = 'dist/index.html';
+            }
+            else{
+                window.location.href = 'https://boggy-pyramid-93c.notion.site/Stranger-name-detected-17952b0e882680fc8749cc0b48fb75f8?pvs=4';
+            }
+        }
+    </script>
 </body>
 </html>

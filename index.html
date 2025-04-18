@@ -4,57 +4,118 @@
     <meta charset="UTF-8">
     <title>Fugo - Terms and Privacy</title>
     <style>
+        :root {
+            --primary-color: #2e7dff;
+            --text-color: #2c2c2c;
+            --bg-color: #ffffff;
+            --section-bg: #f3f6fa;
+            --border-color: #d0d0d0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            line-height: 1.6;
-            background-color: #f9f9f9;
-            color: #333;
+            font-family: "Segoe UI", Roboto, sans-serif;
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
         }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: var(--section-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
         h1, h2 {
-            color: #222;
+            color: var(--primary-color);
         }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
         a {
-            color: #0066cc;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+            padding: 20px;
+            margin-top: 40px;
+            border-top: 1px solid #e0e0e0;
         }
     </style>
 </head>
 <body>
-    <h1>Fugo - Terms and Conditions</h1>
-    <p>
-        By using the Fugo Discord bot ("Fugo"), you agree to the following terms:
-    </p>
+
+<header>
+    <h1>Fugo Bot - Legal Info</h1>
+</header>
+
+<main>
+    <h2>Terms and Conditions</h2>
+    <p>By using the Fugo Discord bot ("Fugo"), you agree to the following terms:</p>
     <ul>
-        <li>You must follow all applicable laws and regulations while using Fugo.</li>
-        <li>You are responsible for any actions taken through your account when using the bot.</li>
-        <li>We reserve the right to disable or remove the bot from servers without prior notice if misuse is detected.</li>
-        <li>Fugo is provided "as is" with no guarantees or warranties.</li>
+        <li>You must follow all applicable laws and Discord's community guidelines.</li>
+        <li>You are responsible for actions performed using the bot on your server.</li>
+        <li>We may remove access to the bot at any time for misuse or abuse.</li>
+        <li>The bot is provided "as is" without warranties or guarantees.</li>
     </ul>
     <p>
-        Your use of Fugo is also governed by Discord’s 
-        <a href="https://discord.com/terms" target="_blank">Terms of Service</a> and 
+        Your usage of Fugo is also subject to:
+        <a href="https://discord.com/terms" target="_blank">Discord's Terms of Service</a> and
         <a href="https://discord.com/privacy" target="_blank">Privacy Policy</a>.
     </p>
 
     <h2>Privacy Policy</h2>
-    <p>
-        Fugo may collect and store certain data for functionality and moderation features, including but not limited to:
-    </p>
+    <p>Fugo may collect the following data to function correctly:</p>
     <ul>
         <li>User IDs</li>
-        <liServer and channel IDs</li>
+        <li>Server and Channel IDs</li>
         <li>Command usage statistics</li>
     </ul>
     <p>
-        We do <strong>not</strong> sell or share your data with third parties. Data is used solely for bot functionality and improvement.
+        We do <strong>not</strong> sell, share, or misuse your data. Everything is stored securely and used only for core bot features.
+        No data is shared with third parties.
     </p>
     <p>
-        All data processing is subject to Discord’s infrastructure and platform policies. For more information, please review 
+        All data handling is aligned with
         <a href="https://discord.com/privacy" target="_blank">Discord’s Privacy Policy</a>.
     </p>
-
     <p>
-        If you have any questions or requests regarding your data, please contact the bot administrator or support team directly through the associated Discord server.
+        If you have questions or want your data removed, contact the bot owner through the support server or GitHub repository.
     </p>
+</main>
+
+<footer>
+    &copy; 2025 Fugo Bot. All rights reserved.
+</footer>
+
 </body>
 </html>

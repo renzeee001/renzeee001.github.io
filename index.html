@@ -2,39 +2,88 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gift Delay Notice</title>
+  <title>Gift Reveal</title>
   <style>
     body {
       margin: 0;
-      height: 100vh;
+      padding: 0;
+      background-color: #e3e7ea;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: #f0f4f8; /* Soft blue-gray background */
-      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      flex-direction: column;
     }
-
-    .notice-box {
-      background-color: #cfe0e8; /* Muted blue tone (matches bg but contrasts enough) */
-      border: 2px solid #000; /* Black outline */
-      border-radius: 16px; /* Rounded corners */
-      padding: 40px 60px;
+    #container {
       text-align: center;
+      padding: 20px 30px;
+      background-color: #cfdde3;
+      border: 2px solid #222;
+      border-radius: 12px;
+      box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
       max-width: 600px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     }
-
-    .notice-box p {
-      margin: 0;
+    #message {
       font-size: 1.2rem;
-      color: #111;
+      margin-bottom: 20px;
+    }
+    #openButton {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background-color: #4a90e2;
+      color: white;
+    }
+    #videoContainer {
+      display: none;
+      margin-top: 20px;
+    }
+    #finalMessage {
+      display: none;
+      margin-top: 20px;
+      font-size: 1.1rem;
+      background-color: #dceef5;
+      padding: 20px;
+      border-radius: 10px;
+      border: 1px solid #555;
     }
   </style>
 </head>
 <body>
-  <div class="notice-box">
-    <p><strong>OOPS!</strong> There is an unexpected delay in your gift, we are trying our best to deliver it to you on time.</p>
+  <div id="container">
+    <div id="message"><strong>We have your gift ready</strong></div>
+    <button id="openButton">Open Gift 🎁</button>
+    <div id="videoContainer">
+      <video id="giftVideo" width="600" controls>
+        <source src="preview h264.mp4" type='video/mp4'>
+        Your browser does not support HEVC video playback.
+      </video>
+    </div>
+    <div id="finalMessage">
+      <p><strong>Happy birthday love</strong>, you are now 17 — exactly 1 year away from turning into an adult (haha, then you will also have to work).<br><br>
+      You are the best thing that has happened to me and I cannot explain in words how thankful I am to you.<br><br>
+      I promise to always stand by you and never leave your side. I was enchanted to meet you in my life and have someone like you ❤️</p>
+    </div>
   </div>
+
+  <script>
+    const button = document.getElementById('openButton');
+    const videoContainer = document.getElementById('videoContainer');
+    const video = document.getElementById('giftVideo');
+    const finalMessage = document.getElementById('finalMessage');
+
+    button.addEventListener('click', () => {
+      button.style.display = 'none';
+      videoContainer.style.display = 'block';
+      video.play();
+    });
+
+    video.addEventListener('ended', () => {
+      finalMessage.style.display = 'block';
+    });
+  </script>
 </body>
 </html>

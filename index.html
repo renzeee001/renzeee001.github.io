@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Editor Portfolio</title>
+  <style>
+    :root {
+      --primary-color: #6c63ff;
+      --secondary-color: #f4f6fb;
+      --text-color: #333;
+      --bg-color: #ffffff;
+      --light-accent: #e0e7ff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: var(--secondary-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: var(--bg-color);
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid var(--light-accent);
+      margin-bottom: 1rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.3rem;
+      color: var(--primary-color);
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #555;
+    }
+
+    section {
+      padding: 3rem 1.5rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    #about p {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+      color: #444;
+      background: var(--bg-color);
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    #works .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+
+    #works .grid video {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      transition: transform 0.2s ease;
+      background: var(--bg-color);
+    }
+
+    #works .grid video:hover {
+      transform: translateY(-5px);
+    }
+
+    #contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: auto;
+      background: var(--bg-color);
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    }
+
+    #contact input,
+    #contact textarea {
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      background: var(--secondary-color);
+    }
+
+    #contact button {
+      background: var(--primary-color);
+      color: white;
+      padding: 0.9rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    #contact button:hover {
+      background: #584ee0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      background: var(--bg-color);
+      color: #777;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+    }
+    .video-card {
+  background: var(--bg-color);
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  text-align: center;
+    }
+
+    .video-card video {
+    margin-bottom: 0.8rem;
+    }
+
+    .video-desc {
+    font-size: 0.95rem;
+    color: #555;
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <img src="dp.jpg" alt="Profile Picture">
+    <h1>Daivik Mahajan</h1>
+    <p>Video Editor</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Having edited in Premiere pro for over 2 years, I have honed skills in video editing, color grading and sound design. The recent switch to Davinci resolve has further enhanced my capabilities, allowing me to deliver high-quality video content. I am passionate about storytelling through visuals and am always eager to take on new projects that challenge my creativity and technical skills.
+    </p>
+    <p>
+      Having color graded multiple videos, I understance the importance of color in setting the tone and mood of a video. I am proficient in using various tools and techniques to achieve the desired look, ensuring that each project stands out.<br>
+      My ability to color grade videos is evident from Video 1 and video 2, where I transformed the raw footage into visually stunning pieces that captivate the audience. I am confident that my skills and experience make me a valuable asset for any video editing project.
+    </p>
+    <p>
+      I look forward to collabrating with you and bringing your vision to life through exceptional video editing and color grading.
+    </p>
+  </section>
+
+  <section id="works">
+  <h2>Some of My Works</h2>
+  <div class="grid">
+    <div class="video-card">
+      <video controls>
+        <source src="converted_intro 2.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="video-desc">A video showing a clear difference between a raw and color graded footage.</p>
+    </div>
+
+    <div class="video-card">
+      <video controls>
+        <source src="color_grade.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="video-desc">Color grading a nosiy footage into clean aesthetic shot</p>
+    </div>
+
+    <div class="video-card">
+      <video controls>
+        <source src="full_length.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p class="video-desc">A Full-length video edit sample combining sound design and visual storytelling.</p>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="mailto:daivikmahajan8000@outlook.com" method="post" enctype="text/plain">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Daivik Mahajan. All rights reserved.</p>
+  </footer>
+</body>
+</html>

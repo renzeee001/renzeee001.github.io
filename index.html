@@ -83,16 +83,28 @@
       margin-top: 1.5rem;
     }
 
-    #works .grid video {
-      width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-      transition: transform 0.2s ease;
+    .video-card {
       background: var(--bg-color);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+      text-align: center;
     }
 
-    #works .grid video:hover {
+    .video-card video, .video-card iframe {
+      width: 100%;
+      margin-bottom: 0.8rem;
+      border-radius: 8px;
+      transition: transform 0.2s ease;
+    }
+
+    .video-card video:hover, .video-card iframe:hover {
       transform: translateY(-5px);
+    }
+
+    .video-desc {
+      font-size: 0.95rem;
+      color: #555;
     }
 
     #contact form {
@@ -138,23 +150,6 @@
       margin-top: 2rem;
       font-size: 0.9rem;
     }
-    .video-card {
-  background: var(--bg-color);
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-  text-align: center;
-    }
-
-    .video-card video {
-    margin-bottom: 0.8rem;
-    }
-
-    .video-desc {
-    font-size: 0.95rem;
-    color: #555;
-    }
-
   </style>
 </head>
 <body>
@@ -170,43 +165,39 @@
       Having edited in Premiere pro for over 2 years, I have honed skills in video editing, color grading and sound design. The recent switch to Davinci resolve has further enhanced my capabilities, allowing me to deliver high-quality video content. I am passionate about storytelling through visuals and am always eager to take on new projects that challenge my creativity and technical skills.
     </p>
     <p>
-      Having color graded multiple videos, I understance the importance of color in setting the tone and mood of a video. I am proficient in using various tools and techniques to achieve the desired look, ensuring that each project stands out.<br>
+      Having color graded multiple videos, I understand the importance of color in setting the tone and mood of a video. I am proficient in using various tools and techniques to achieve the desired look, ensuring that each project stands out.<br>
       My ability to color grade videos is evident from Video 1 and video 2, where I transformed the raw footage into visually stunning pieces that captivate the audience. I am confident that my skills and experience make me a valuable asset for any video editing project.
     </p>
     <p>
-      I look forward to collabrating with you and bringing your vision to life through exceptional video editing and color grading.
+      I look forward to collaborating with you and bringing your vision to life through exceptional video editing and color grading.
     </p>
   </section>
 
   <section id="works">
-  <h2>Some of My Works</h2>
-  <div class="grid">
-    <div class="video-card">
-      <video controls>
-        <source src="converted_intro 2.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p class="video-desc">A video showing a clear difference between a raw and color graded footage.</p>
-    </div>
+    <h2>Some of My Works</h2>
+    <div class="grid">
+      <div class="video-card">
+        <video controls>
+          <source src="converted_intro 2.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-desc">Intro edit showcasing smooth transitions and pacing.</p>
+      </div>
 
-    <div class="video-card">
-      <video controls>
-        <source src="color_grade.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p class="video-desc">Color grading a nosiy footage into clean aesthetic shot</p>
-    </div>
+      <div class="video-card">
+        <video controls>
+          <source src="color_grade.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <p class="video-desc">Color grading project transforming raw footage into a cinematic look.</p>
+      </div>
 
-    <div class="video-card">
-      <video controls>
-        <source src="full_length.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p class="video-desc">A Full-length video edit sample combining sound design and visual storytelling.</p>
+      <div class="video-card">
+        <iframe width="100%" height="250" src="https://www.youtube.com/embed/VIDEO_ID" title="Full-length Video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <p class="video-desc">Full-length video edit combining sound design and visual storytelling.</p>
+      </div>
     </div>
-  </div>
-</section>
-
+  </section>
 
   <section id="contact">
     <h2>Contact Me</h2>

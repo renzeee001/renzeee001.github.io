@@ -13,32 +13,30 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    body {
-      background: #0f0f0f;
-      color: #fff;
-      overflow-x: hidden;
-    }
-
-    /* PARTICLE CANVAS */
     #bg {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      z-index: -1;
-    }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none; /* THIS FIXES CLICK ISSUE */
+}
 
-    /* DARK OVERLAY */
-    body::before {
-      content: "";
-      position: fixed;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: -0.5;
-    }
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+  pointer-events: none; /* ALSO IMPORTANT */
+}
 
+header, section, footer {
+  position: relative;
+  z-index: 2;
+}
     header {
       height: 100vh;
       display: flex;
@@ -54,10 +52,13 @@
       margin-bottom: 10px;
     }
 
-    header p {
-      color: #aaa;
-      max-width: 600px;
-    }
+   header p {
+  color: #aaa;
+  max-width: 900px;
+  line-height: 1.8;
+  font-size: 16px;
+  text-align: center;
+}
 
     .btns {
       margin-top: 20px;

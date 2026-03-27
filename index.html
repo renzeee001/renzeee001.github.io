@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shruga | Video Editor</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0f0f0f;
+      color: #fff;
+    }
+
+    header {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      background: linear-gradient(135deg, #111, #1c1c1c);
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      color: #aaa;
+      max-width: 600px;
+    }
+
+    .btns {
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 10px;
+      border-radius: 5px;
+      text-decoration: none;
+      color: #fff;
+      background: #ff4c60;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: #ff2c40;
+    }
+
+    section {
+      padding: 60px 10%;
+    }
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .video-card {
+      background: #1a1a1a;
+      border-radius: 12px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .video-card:hover {
+      transform: scale(1.03);
+    }
+
+    video {
+      width: 100%;
+      display: block;
+    }
+
+    .video-info {
+      padding: 15px;
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .youtube-section {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .youtube-btn {
+      background: #ff0000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #111;
+      color: #777;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Daivik </h1>
+    <p>
+      Professional Video Editor with 5+ years of experience.<br>
+      Specialized in cinematic color grading using DaVinci Resolve.
+    </p>
+
+    <div class="btns">
+      <a href="https://instagram.com/shruga_001" target="_blank" class="btn">
+        Find out more on Instagram
+      </a>
+
+      <a href="mailto:daivikmahajan8000@outlook.com" class="btn">
+        Contact Me
+      </a>
+    </div>
+  </header>
+
+  <section>
+    <h2 style="text-align:center; margin-bottom:30px;">My Work</h2>
+
+    <div class="portfolio">
+
+      <!-- Video 1 -->
+      <div class="video-card">
+        <video controls muted loop>
+          <source src="color_grade.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">Night Color Grade</div>
+      </div>
+
+      <!-- Video 2 -->
+      <div class="video-card">
+        <video controls muted loop>
+          <source src="converted_intro 2.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">Day ligth color grade</div>
+      </div>
+
+      <!-- Video 3 -->
+      <div class="video-card">
+        <video controls muted loop>
+          <source src="preview h264.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">Birthday wish for a loved one</div>
+      </div>
+      <!--video 4-->
+      <div class="video-card">
+        <video controls muted loop>
+          <source src="event day 1.mp4" type="video/mp4">
+        </video>
+        <div class="video-info">Event intro edit</div>
+      </div>
+    </div>
+
+    <!-- YouTube Section -->
+    <div class="youtube-section">
+      <h3 style="margin-bottom:15px;">Watch Full Project</h3>
+      <a href="https://youtu.be/qHs94hA-l-8?si=IQLc2JMO2J2KTiuE" target="_blank" class="btn youtube-btn">
+        Watch on YouTube
+      </a>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 Shruga | Video Editor</p>
+  </footer>
+
+  <script>
+    // Auto play on hover (premium feel)
+    const videos = document.querySelectorAll("video");
+
+    videos.forEach(video => {
+      video.addEventListener("mouseenter", () => {
+        video.play();
+      });
+
+      video.addEventListener("mouseleave", () => {
+        video.pause();
+        video.currentTime = 0;
+      });
+    });
+  </script>
+
+</body>
+</html>

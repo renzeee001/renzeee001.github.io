@@ -16,6 +16,27 @@
     body {
       background: #0f0f0f;
       color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* PARTICLE CANVAS */
+    #bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    /* DARK OVERLAY */
+    body::before {
+      content: "";
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: -0.5;
     }
 
     header {
@@ -25,7 +46,7 @@
       align-items: center;
       flex-direction: column;
       text-align: center;
-      background: linear-gradient(135deg, #111, #1c1c1c);
+      background: transparent;
     }
 
     header h1 {
@@ -109,11 +130,17 @@
 
 <body>
 
+  <!-- PARTICLE BACKGROUND -->
+  <canvas id="bg"></canvas>
+
   <header>
-    <h1>Shruga </h1>
-    <p>I started my video editing journey in 2022 with Adobe Premiere Pro, where I spent several years building a strong foundation in the core aspects of editing. During this time, I focused on developing skills in color grading, sound design, pacing, and overall storytelling—understanding how each element comes together to shape a complete and engaging video.<br>
-    The gallery below showcases a few short edits that highlight my style and capabilities, while the YouTube link provides a look into my long-form projects and more detailed work.<br>
-    I currently use DaVinci Resolve as my primary editing software, allowing me to take full advantage of advanced color grading tools and refine the visual quality of my projects even further.
+    <h1>Shruga</h1>
+    <p>
+      I started my video editing journey in 2022 with Adobe Premiere Pro, where I spent several years building a strong foundation in the core aspects of editing. During this time, I focused on developing skills in color grading, sound design, pacing, and overall storytelling—understanding how each element comes together to shape a complete and engaging video.<br><br>
+
+      The gallery below showcases a few short edits that highlight my style and capabilities, while the YouTube link provides a look into my long-form projects and more detailed work.<br><br>
+
+      I currently use DaVinci Resolve as my primary editing software, allowing me to take full advantage of advanced color grading tools and refine the visual quality of my projects even further.
     </p>
 
     <div class="btns">
@@ -132,7 +159,6 @@
 
     <div class="portfolio">
 
-      <!-- Video 1 -->
       <div class="video-card">
         <video controls muted loop>
           <source src="color_grade.mp4" type="video/mp4">
@@ -140,31 +166,29 @@
         <div class="video-info">Night Color Grade</div>
       </div>
 
-      <!-- Video 2 -->
       <div class="video-card">
         <video controls muted loop>
-          <source src="converted_intro 2.mp4" type="video/mp4">
+          <source src="converted_intro2.mp4" type="video/mp4">
         </video>
-        <div class="video-info">Day ligth color grade</div>
+        <div class="video-info">Day Light Color Grade</div>
       </div>
 
-      <!-- Video 3 -->
       <div class="video-card">
         <video controls muted loop>
-          <source src="preview h264.mp4" type="video/mp4">
+          <source src="preview_h264.mp4" type="video/mp4">
         </video>
-        <div class="video-info">Birthday wish for a loved one</div>
+        <div class="video-info">Birthday Edit</div>
       </div>
-      <!--video 4-->
+
       <div class="video-card">
         <video controls muted loop>
-          <source src="event day 1.mp4" type="video/mp4">
+          <source src="event_day1.mp4" type="video/mp4">
         </video>
-        <div class="video-info">Event intro edit</div>
+        <div class="video-info">Event Intro</div>
       </div>
+
     </div>
 
-    <!-- YouTube Section -->
     <div class="youtube-section">
       <h3 style="margin-bottom:15px;">Watch Full Project</h3>
       <a href="https://youtu.be/qHs94hA-l-8?si=IQLc2JMO2J2KTiuE" target="_blank" class="btn youtube-btn">
@@ -179,18 +203,60 @@
   </footer>
 
   <script>
-    // Auto play on hover (premium feel)
+    // VIDEO HOVER PLAY
     const videos = document.querySelectorAll("video");
 
     videos.forEach(video => {
-      video.addEventListener("mouseenter", () => {
-        video.play();
-      });
-
+      video.addEventListener("mouseenter", () => video.play());
       video.addEventListener("mouseleave", () => {
         video.pause();
         video.currentTime = 0;
       });
+    });
+
+    // PARTICLE BACKGROUND
+    const canvas = document.getElementById("bg");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let particles = [];
+
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        r: Math.random() * 2,
+        dx: (Math.random() - 0.5) * 0.5,
+        dy: (Math.random() - 0.5) * 0.5
+      });
+    }
+
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      particles.forEach(p => {
+        p.x += p.dx;
+        p.y += p.dy;
+
+        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(255,255,255,0.7)";
+        ctx.fill();
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+
+    window.addEventListener("resize", () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     });
   </script>
 

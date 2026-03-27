@@ -13,30 +13,11 @@
       font-family: 'Segoe UI', sans-serif;
     }
 
-    #bg {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  pointer-events: none; /* THIS FIXES CLICK ISSUE */
-}
+    body {
+      background: linear-gradient(135deg, #0f0f0f, #1a1a1a, #0a0a0a);
+      color: #fff;
+    }
 
-body::before {
-  content: "";
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.25);
-  z-index: 1;
-  pointer-events: none; /* ALSO IMPORTANT */
-}
-
-header, section, footer {
-  position: relative;
-  z-index: 2;
-}
     header {
       height: 100vh;
       display: flex;
@@ -44,7 +25,6 @@ header, section, footer {
       align-items: center;
       flex-direction: column;
       text-align: center;
-      background: transparent;
     }
 
     header h1 {
@@ -52,13 +32,13 @@ header, section, footer {
       margin-bottom: 10px;
     }
 
-   header p {
-  color: #aaa;
-  max-width: 900px;
-  line-height: 1.8;
-  font-size: 16px;
-  text-align: center;
-}
+    header p {
+      color: #aaa;
+      max-width: 900px;
+      line-height: 1.8;
+      font-size: 16px;
+      text-align: center;
+    }
 
     .btns {
       margin-top: 20px;
@@ -131,9 +111,6 @@ header, section, footer {
 
 <body>
 
-  <!-- PARTICLE BACKGROUND -->
-  <canvas id="bg"></canvas>
-
   <header>
     <h1>Shruga</h1>
     <p>
@@ -183,7 +160,7 @@ header, section, footer {
 
       <div class="video-card">
         <video controls muted loop>
-          <source src="Timeline 3.mov" type="video/mov">
+          <source src="event.mp4" type="video/mp4">
         </video>
         <div class="video-info">Event Intro</div>
       </div>
@@ -204,7 +181,6 @@ header, section, footer {
   </footer>
 
   <script>
-    // VIDEO HOVER PLAY
     const videos = document.querySelectorAll("video");
 
     videos.forEach(video => {
@@ -213,51 +189,6 @@ header, section, footer {
         video.pause();
         video.currentTime = 0;
       });
-    });
-
-    // PARTICLE BACKGROUND
-    const canvas = document.getElementById("bg");
-    const ctx = canvas.getContext("2d");
-
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    let particles = [];
-
-    for (let i = 0; i < 100; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        r: Math.random() * 2,
-        dx: (Math.random() - 0.5) * 0.5,
-        dy: (Math.random() - 0.5) * 0.5
-      });
-    }
-
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach(p => {
-        p.x += p.dx;
-        p.y += p.dy;
-
-        if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(255,255,255,1)";
-        ctx.fill();
-      });
-
-      requestAnimationFrame(animate);
-    }
-
-    animate();
-
-    window.addEventListener("resize", () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
     });
   </script>
 
